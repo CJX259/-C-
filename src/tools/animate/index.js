@@ -23,14 +23,29 @@ export default function createAnimate({
     },
   });
   document.body.appendChild(app.$el);
+  // width有px
+  let calWidth;
+  let calHeight;
+  if (typeof width === 'string') {
+    calWidth = +width.slice(0, width.length - 2);
+    calHeight = +height.slice(0, height.length - 2);
+  } else {
+    calHeight = height;
+    calWidth = width;
+  }
+  // 当购物车在上方时
+  if (startY < endY) {
+    calHeight *= -1;
+    calWidth *= -1;
+  }
   setTimeout(() => {
-    app.moveX = endX;
-    app.moveY = endY;
+    app.moveX = endX - calWidth / 2;
+    app.moveY = endY - calHeight / 2;
     app.sx = 0.01;
     app.sy = 0.01;
     app.opacity = 0;
   }, 0);
   setTimeout(() => {
     app.exist = false;
-  }, 1000);
+  }, 700);
 }

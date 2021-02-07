@@ -22,7 +22,7 @@ export default {
   z-index: 100;
   top: 0;
   left: 0;
-  transform-origin: 50px 20px;
+  transform-origin: 50% 50%;
   >img{
     width: 100%;
     border-radius: 50%;

@@ -131,6 +131,13 @@ export default {
       }
     }
   }
+  .card-none{
+    width: 100%;
+    height: 100%;
+    >img{
+      width: 100%;
+    }
+  }
   .submit{
     margin-bottom: 50px;
   }
