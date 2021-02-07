@@ -9,7 +9,7 @@
       <div class="tags" v-for="(item, i) in goods.tags" :key="'tags'+i">{{item}}</div>
       <div class="price">￥{{goods.price}}</div>
       <div class="counter">
-        <div @click="changeHandler({id: goods.id, value: -1})" v-if="num">
+        <div @click="changeLess({id: goods.id, value: -1})" v-if="num">
           <img src="https://duyi-bucket.oss-cn-beijing.aliyuncs.com/img/rec.png">
         </div>
         <div class="num" v-if="num">{{num}}</div>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { Toast } from 'vant';
 import Animate from '../tools/animate';
 
 export default {
@@ -32,6 +33,13 @@ export default {
     };
   },
   methods: {
+    changeLess(obj) {
+      if (this.num === 1 && this.noFly) {
+        Toast('该商品不能再减了喔~');
+        return;
+      }
+      this.changeHandler(obj);
+    },
     flyToShopping() {
       this.changeHandler({ id: this.goods.id, value: 1 });
       if (this.noFly) {

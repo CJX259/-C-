@@ -15,7 +15,8 @@
           :changeHandler="storageChange"
           :noFly="true"
           :goods="item"
-          :num="counterMap[item.id]" />
+          :num="counterMap[item.id]"
+          />
         </div>
       </van-checkbox-group>
     </div>

@@ -1,7 +1,6 @@
 <template>
   <div  class="tab-bar-wrapper">
     <van-tabbar route fixed>
-      <van-tabbar-item icon="home-o" to="/home">首页</van-tabbar-item>
       <van-tabbar-item icon="apps-o" to="/home/classify">分类</van-tabbar-item>
       <van-tabbar-item
       id="shopping"
@@ -9,7 +8,6 @@
       :badge="badge"
       to="/home/shopping"
       >购物车</van-tabbar-item>
-      <van-tabbar-item icon="user-circle-o" to="/other">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
