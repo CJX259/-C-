@@ -34,13 +34,13 @@ export default function createAnimate({
     calWidth = width;
   }
   // 当购物车在上方时
-  if (startY < endY) {
+  if (startY > endY) {
     calHeight *= -1;
     calWidth *= -1;
   }
   setTimeout(() => {
-    app.moveX = endX - calWidth / 2;
-    app.moveY = endY - calHeight / 2;
+    app.moveX = endX + calWidth / 2;
+    app.moveY = endY + calHeight / 2;
     app.sx = 0.01;
     app.sy = 0.01;
     app.opacity = 0;
